@@ -7,7 +7,7 @@ class Solution:
         res = 0
         while x > 0:
             res = 10*res + x%10
-            x = (x-x%10)//10
+            x = x//10
         
         if res < -2**31 or res > 2**31 - 1:
                 return 0
