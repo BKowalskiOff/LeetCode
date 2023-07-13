@@ -19,5 +19,4 @@ class Solution:
             if not str1[i] == str2[i]:
                 return str1[:i]
             i += 1
-        print(i)
         return str1[:i]
