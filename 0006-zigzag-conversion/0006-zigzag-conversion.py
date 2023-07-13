@@ -1,22 +1,13 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
+        
+        if numRows == 1:
+            return s
+        
         strings = ['' for i in range(numRows)]
         
-        row = 0
-        up = False
         for i, c in enumerate(s):
+            row = abs(abs((i%(2*numRows-2))-(numRows-1))-(numRows-1))
             strings[row] += c
-            if up:
-                if row == numRows-1:
-                    up = False
-                    row = max(row-1, 0)
-                else:
-                    row = min(row + 1, numRows - 1)
-            else:
-                if row == 0:
-                    up = True
-                    row = min(row + 1, numRows - 1)
-                else:
-                    row = max(row-1, 0)
                 
         return ''.join(strings)
