@@ -8,7 +8,7 @@ class Solution:
         row = 0
         up = False
         
-        for c in s:
+        for i, c in enumerate(s):
             if row == 0 or (row == (numRows - 1)):
                 up = not up
             strings[row] += c
