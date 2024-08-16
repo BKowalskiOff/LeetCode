@@ -3,7 +3,7 @@ class Solution:
         i, j = 0, 0
         l1 = len(haystack)
         l2 = len(needle)
-        while i < l1:
+        while i < l1-l2+1:
             print(i,haystack[i])
             while j < l2 and i+j < l1:
                 if haystack[i+j] != needle[j]:
