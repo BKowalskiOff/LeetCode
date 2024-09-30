@@ -12,13 +12,9 @@ class CustomStack:
             return
         self.size += 1
         self.stack.append(x)
-        #print("push ", x)
-        #self.prnt()
         
     def pop(self) -> int:
         if self.size == 0:
-           # print("pop")
-           # self.prnt()
             return -1
         new_ops = []
         ret = self.stack.pop()
@@ -30,23 +26,12 @@ class CustomStack:
             new_ops.append((start, end, val))
         self.ops = new_ops
         self.size -= 1
-        #print("pop")
-        #self.prnt()
         return ret
             
     def increment(self, k: int, val: int) -> None:
         if self.size == 0:
-         #   print("increment ", k, val)
-          #  self.prnt()
             return
         self.ops.append((0,min(self.size-1, k-1),val))
-        #print("increment ", k, val)
-        #self.prnt()
-        
-    def prnt(self):
-        print(self.stack)
-        for x in self.ops:
-            print(x)
 
 # Your CustomStack object will be instantiated and called as such:
 # obj = CustomStack(maxSize)
